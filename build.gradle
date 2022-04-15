@@ -1,0 +1,39 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
+
+    implementation group: 'org.glassfish.jersey.containers', name: 'jersey-container-jdk-http', version: '2.28'
+    implementation 'se.michaelthelin.spotify:spotify-web-api-java:2.1.2'
+    
+    // needed since version 2.26 and newer are not backward compatible
+    // https://stackoverflow.com/questions/44088493/jersey-stopped-working-with-injectionmanagerfactory-not-found
+    implementation group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: '2.28'
+    implementation 'org.glassfish.jersey.media:jersey-media-moxy:2.28'
+
+    implementation 'org.glassfish.jersey.core:jersey-server:2.28'
+    implementation 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.28'
+
+    implementation 'org.glassfish.jersey.core:jersey-client:2.28'
+
+    implementation group: 'com.sun.xml.ws', name: 'rt', version: '2.3.2'
+
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.uniba.dsg.charts.Server'
+    }
+}
+
+mainClassName = "de.uniba.dsg.charts.Server"
