@@ -18,7 +18,6 @@ public class ServerApplication extends Application {
     public Set<Class<?>> getClasses() {
         Set<Class<?>> resources = new HashSet<>();
         resources.add(ChartsResource.class);
-        resources.add(DebugMapper.class);
         return resources;
     }
 }

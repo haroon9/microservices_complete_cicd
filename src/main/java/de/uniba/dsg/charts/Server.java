@@ -8,6 +8,7 @@ import javax.ws.rs.core.UriBuilder;
 import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
+
 public class Server {
      private static Properties properties = Configuration.loadProperties();
 

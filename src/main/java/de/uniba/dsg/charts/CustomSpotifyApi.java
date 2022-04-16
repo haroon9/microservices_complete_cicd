@@ -24,8 +24,10 @@ public class CustomSpotifyApi {
         try (InputStream stream = CustomSpotifyApi.class.getClassLoader().getResourceAsStream("config.properties")) {
             properties.load(stream);
             api = new SpotifyApi.Builder()
-                    .setClientId(properties.getProperty("spotifyClientId"))
-                    .setClientSecret(properties.getProperty("spotifyClientSecret"))
+//                    .setClientId(properties.getProperty("spotifyClientId"))
+//                    .setClientSecret(properties.getProperty("spotifyClientSecret"))
+                    .setClientId("956e5a55c12e47c990bb3471181b57b9")
+                    .setClientSecret("4b31e7dadff24bcfa8ad830c579ed149")
                     .build();
         } catch (IOException e) {
             LOGGER.severe("Cannot load configuration file.");
